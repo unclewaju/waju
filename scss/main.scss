@@ -129,7 +129,7 @@ main {
   border-radius: 1000px;
 }
 
-li:after {
+.sm-8 li:after {
   content: "";
   position: absolute;
   top: calc(100% + 10px);
@@ -198,6 +198,24 @@ li.xd:after {
 @keyframes xd {
   to {
     width: 100%;
+  }
+}
+
+//work//Projects
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
   }
 }
 
