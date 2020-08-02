@@ -24,7 +24,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -55,7 +54,9 @@
     .menu-branding .portrait {
       width: 500px;
       height: 600px;
-      background: url("../img/Unclewaju.jpg"); }
+      background: url("../img/Unclewaju.jpg");
+      border-radius: 2%;
+      border: solid 2px #eece1a; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
@@ -87,6 +88,52 @@
 
 .nav-item :nth-child(4) {
   transition-delay: 0.4s; }
+
+@media screen and (min-width: 1171px) {
+  .project {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .project {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/project2.jpg");
+      width: 150px;
+      height: 350px; }
+  .about-info {
+    grid-template-areas: "bioimage" "bio" "sm-8" "job1" "job2" "job3";
+    grid-template-columns: 1fr; }
+    .about-info .project {
+      grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .project {
+    grid-template-columns: 1fr; } }
 
 * {
   box-sizing: border-box; }
@@ -158,14 +205,13 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 10px;
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(2, 1fr); }
 
 .bio-image {
   grid-area: bioimage;
   margin: auto;
-  border-radius: 50%;
   border: #eece1a 3px solid; }
 
 .bio {
@@ -269,6 +315,23 @@ li.xd:after {
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
 
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #fff; }
+
 .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -355,7 +418,7 @@ li.xd:after {
   color: #fff;
   height: 60px; }
 
-@media screen and (max-width: 1171px) {
+@media screen and (min-width: 1171px) {
   .project {
     grid-template-columns: repeat(4, 1fr); } }
 
@@ -386,9 +449,9 @@ li.xd:after {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/unclewaju.jpg");
+      background: url("../img/project2.jpg");
       width: 150px;
-      height: 150px; }
+      height: 350px; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "sm-8" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
